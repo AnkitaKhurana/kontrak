@@ -1,0 +1,2 @@
+# kontrak
+This project is aimed to build a cloud based platform to manage the vendors, handling invoices, performance management and report generation, and also managing contracts between the third-party vendors and our clients. The software can be used by the company to centrally manage the vendor services and performance management. It will be accessible over various devices such as mobiles, desktops, tablets. The ability to structure the right contract and effectively administer its execution can significantly facilitate the achievement of business goals.
