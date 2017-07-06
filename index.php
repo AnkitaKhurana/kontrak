@@ -1,11 +1,11 @@
 <?php
+	include('config.php');
 	session_start();
 	if(isset($_SESSION['logged'])!="true")
 	{
  		header("Location: login.php");
  		die();
 	}
-	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 <!Doctype html>
 <html lang="en" class="no-js">
@@ -16,7 +16,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"><!-- Normalize -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/form_style.css"> <!-- Form Styling -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	
 	<title>KonTrak</title>
@@ -57,8 +59,9 @@
 				<li class="has-children overview">
 					<a href="#0">Manage Contracts</a>
 					<ul>
-						<li><a href="#0">Add New Contract</a></li>
+						<li><a href="index.php?new_contract">Add New Contract</a></li>
 						<li><a href="#0">Edit Contract</a></li>
+						<li><a href="#0">Contract Categories</a></li>
 					</ul>
 				</li>
 				<li class="has-children notifications active">
@@ -115,16 +118,24 @@
 		</nav>
 
 		<div class="content-wrapper">
-			<h1>Welcome to KonTrak</h1>
-			<?php 
+			<?php
+				if(isset($_GET['new_contract'])){
+                    include("new_contract.php"); 
+                }
 				if(isset($_GET['logout'])){
                     include("logout.php"); 
                 }
 			?>
 		</div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
-<script src="js/jquery-2.1.4.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/jquery.menu-aim.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
+<script>
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+</script>
 </body>
 </html>

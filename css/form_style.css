@@ -1,0 +1,80 @@
+.form-container {
+  font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #3AAFAB;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.form-flex-outer,
+.form-flex-inner {
+  list-style-type: none;
+  padding: 0;
+}
+
+.form-flex-outer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-flex-outer li,
+.form-flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-flex-inner {
+  padding: 0 8px;
+  justify-content: space-between;  
+}
+
+.form-flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.form-flex-outer li label,
+.form-flex-outer li p {
+  padding: 8px;
+  font-weight: 300;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.form-flex-outer > li > label,
+.form-flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+.form-flex-outer > li > label + *,
+.form-flex-inner {
+  flex: 1 0 220px;
+}
+
+.form-flex-outer li p {
+  margin: 0;
+}
+
+.form-flex-outer li input:not([type='checkbox']),
+.form-flex-outer li textarea {
+  padding: 15px;
+  border: none;
+}
+
+.form-flex-outer li button {
+  margin-left: auto;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  border-radius: 2px;
+}
+
+.form-flex-inner li {
+  width: 100px;
+}
