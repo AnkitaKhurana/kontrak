@@ -45,10 +45,9 @@
 		<form action="" method="post" name="Login_Form" class="form-signin">       
 		    <h3 class="form-signin-heading">KonTrak</h3>
 			  <hr class="colorgraph"><br>
-			  
-			  <input type="email" class="form-control" name="email" placeholder="Username" required="" autofocus="" />
-			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
-			 
+			  	<input type="email" class="form-control" name="email" placeholder="Username" required="" autofocus="" />
+			  	<input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
+				<br>
 			  <button class="btn btn-lg btn-primary btn-block" name="login" value="login" type="Submit">Login</button>  			
 		</form>			
 	</div>

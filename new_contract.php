@@ -61,7 +61,7 @@
                     </li>
                     <li>
                         <label for="language">Language</label>
-                        <select name="category" id="language" required>
+                        <select name="language" id="language" required>
                             <option>Language of Contract</option>
                             <?php
                                 $get_language = "select * from language";
@@ -74,8 +74,52 @@
                             ?>
                         </select>
                     </li>
-                        <label for="life">Total Committed Value</label>
+                    <li>
+                        <label for="life">Total Committed Value (Years)</label>
                         <input type="number" id="life">
+                    </li>
+                    <li>
+                        <label for="supplier">Name of Supplier</label>
+                        <input type="text" id="supplier" placeholder="Enter Supplier's Name here">
+                    </li>
+                    <li>
+                        <label for="country">Country</label>
+                        <select name="country" id="country" required>
+                            <option>Select a Country</option>
+                            <?php
+                                $get_country = "select * from country";
+                                $result_country = mysqli_query($conn,$get_country);
+                                while($row_country = mysqli_fetch_array($result_country))  {
+                                    $country_id = $row_country['country_id'];
+                                    $country_name = $row_country['country'];
+                                    echo"<option value = '$country_id'>$country_name</option>";
+                                }
+                            ?>
+                        </select>
+                    </li>
+                </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Payment Details</legend>
+                <ul class="form-flex-outer">
+                    <li>
+                        <label for="currency">Currency</label>
+                        <select name="currency" id="currency" required>
+                            <option>Select a Currency</option>
+                            <?php
+                                $get_currency = "select * from currency";
+                                $result_currency = mysqli_query($conn,$get_currency);
+                                while($row_currency = mysqli_fetch_array($result_currency))  {
+                                    $currency_id = $row_currency['currency_id'];
+                                    $currency_name = $row_currency['currency'];
+                                    echo"<option value = '$currency_id'>$currency_name</option>";
+                                }
+                            ?>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="spend">Annual Spend</label>
+                        <input type="text" id="spend" placeholder="Total Spend Annually">
                     </li>
                 </ul>
         </fieldset>
