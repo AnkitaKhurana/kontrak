@@ -100,7 +100,7 @@
 			<ul>
 				<li class="cd-label">Invoice Management</li>
 				<li class="has-children bookmarks">
-					<a href="#0">Attach an Invoice</a>
+					<a href="index.php?attach_invoice">Attach an Invoice</a>
 				</li>
 				<li class="has-children images">
 					<a href="#0">Invoice Details</a>
@@ -121,6 +121,9 @@
 			<?php
 				if(isset($_GET['new_contract'])){
                     include("new_contract.php"); 
+                }
+                if(isset($_GET['attach_invoice'])){
+                    include("attach_invoice.php"); 
                 }
 				if(isset($_GET['logout'])){
                     include("logout.php"); 
