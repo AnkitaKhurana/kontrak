@@ -40,14 +40,8 @@ error_reporting(E_ALL);
 
                      <li>
                         <label for="datepicker">Invoice Date</label>
-                        <input type="text" name="date" id="datepicker" placeholder="Click Here ">
+                        <input type="text" name="invoice_date" id="datepicker">
                     </li>
-
-
-
-
-
-                  
                 </ul>
                 <input type="submit" name="Invoice-Form" >
 
@@ -67,21 +61,17 @@ error_reporting(E_ALL);
         $file = $_FILES['file']['name'];
         $temp_name = $_FILES['file']['tmp_name'];
         $amount = $_POST['amount'];
+        $invoiceDateArray = explode('/', $_POST['invoice_date']);
+        $invoice_date = $invoiceDateArray[2].'-'.$invoiceDateArray[0].'-'.$invoiceDateArray[1];
         move_uploaded_file($temp_name,"invoice/$file");
 
 
-    $input_invoice= "insert into invoice(id,contract_no ,description,file,amount) values ('$invoice_num','$contract_num','$description','$file','$amount')";
-    
-    $query = mysqli_query($conn,$input_invoice);
-
-  
-    if($query){
+        $input_invoice= "insert into invoice(id,contract_no ,description,file,amount, date) values ('$invoice_num','$contract_num','$description','$file','$amount', '$invoice_date')";
+        $query = mysqli_query($conn,$input_invoice);
+        if($query){
             echo"<script>alert('Invoice Input Successfully!')</script>"; 
-           
-    }
-
-	  
-	  
+            echo"<script>window.open('index.php?attach_invoice','_self')</script>";
+        }
     }
 
 ?>
