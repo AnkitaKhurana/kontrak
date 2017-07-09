@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"><!-- Normalize -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/table_style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="css/form_style.css"> <!-- Form Styling -->
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	
@@ -78,8 +79,7 @@
 					
 					<ul>
 						<li><a href="index.php?add_review">Add Review</a></li>
-						<li><a href="#0">All Reviews</a></li>
-						<li><a href="#0">Edit Reviews</a></li>
+						<li><a href="index.php?view_all_reviews">All Reviews</a></li>
 					</ul>
 				</li>
 
@@ -88,18 +88,18 @@
 					
 					<ul>
 						<li><a href="index.php?add_notice_period">Add Notice Period</a></li>
-						<li><a href="#0">View All</a></li>
+						<li><a href="index.php?view_all_notices">View All</a></li>
 					</ul>
 				</li>
 
 				<li class="has-children bookmarks">
-					<a href="#0">View All Vendors</a>
+					<a href="index.php?view_all_vendor">View All Vendors</a>
 				</li>
 
 				<li class="has-children bookmarks">
 					<a href="#0">Issues</a>
 					<ul>
-						<li><a href="#0">All Issues</a></li>
+						<li><a href="index.php?view_all_issues">All Issues</a></li>
 						<li><a href="#0">Settle Issues</a></li>
 					</ul>
 				</li>
@@ -133,8 +133,20 @@
                 if(isset($_GET['add_notice_period'])){
                     include("add_notice_period.php"); 
                 }
+                if(isset($_GET['view_all_notices'])){
+                    include("view_all_notices.php"); 
+                }
+                if(isset($_GET['view_all_vendor'])){
+                    include("view_all_vendor.php"); 
+                }
                 if(isset($_GET['add_review'])){
                     include("add_review.php"); 
+                }
+                if(isset($_GET['view_all_reviews'])){
+                    include("view_all_reviews.php"); 
+                }
+                if(isset($_GET['view_all_issues'])){
+                    include("view_all_issues.php"); 
                 }
                 if(isset($_GET['attach_invoice'])){
                     include("attach_invoice.php"); 
