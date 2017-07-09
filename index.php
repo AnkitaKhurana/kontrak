@@ -77,7 +77,7 @@
 					<a href="#0">Reviewer Comments</a>
 					
 					<ul>
-						<li><a href="#0">Add Review</a></li>
+						<li><a href="index.php?add_review">Add Review</a></li>
 						<li><a href="#0">All Reviews</a></li>
 						<li><a href="#0">Edit Reviews</a></li>
 					</ul>
@@ -87,7 +87,7 @@
 					<a href="#0">Notice Periods</a>
 					
 					<ul>
-						<li><a href="#0">Add Notice Period</a></li>
+						<li><a href="index.php?add_notice_period">Add Notice Period</a></li>
 						<li><a href="#0">View All</a></li>
 					</ul>
 				</li>
@@ -130,6 +130,12 @@
 				if(isset($_GET['new_contract'])){
                     include("new_contract.php"); 
                 }
+                if(isset($_GET['add_notice_period'])){
+                    include("add_notice_period.php"); 
+                }
+                if(isset($_GET['add_review'])){
+                    include("add_review.php"); 
+                }
                 if(isset($_GET['attach_invoice'])){
                     include("attach_invoice.php"); 
                 }
@@ -149,9 +155,6 @@
     });
     $(function() {
         $("#e-datepicker").datepicker();
-    });
-    $(function() {
-        $("#notice-datepicker").datepicker();
     });
 </script>
 </body>

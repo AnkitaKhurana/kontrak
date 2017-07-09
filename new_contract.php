@@ -232,12 +232,12 @@
         $sdm_email = mysqli_real_escape_string($conn,$_POST['sdm_email']);
         $sdm_contact = mysqli_real_escape_string($conn,$_POST['sdm_contact']);
         $remarks = mysqli_real_escape_string($conn,$_POST['remarks']); //Insert rest into expiration
-        /*$expirationDateArray = explode('/', $_POST['expiration_date']);
+        $expirationDateArray = explode('/', $_POST['expiration_date']);
         $expiration_date = $expirationDateArray[2].'-'.$expirationDateArray[0].'-'.$expirationDateArray[1];
         $renewal_provision = mysqli_real_escape_string($conn,$_POST['renewal_provision']);
         $termination_provision = mysqli_real_escape_string($conn, $_POST['termination_provision']);
         $assignment_provision = mysqli_real_escape_string($conn,$_POST['assignment_provision']);
-*/
+
         //Insert vendor,sdm into vendor and sdm table and get it's id - then store that id in contract table
         $insert_vendor = "Insert into vendor(contact_name, email, phone_no) values('$vendor_name','$vendor_email', '$vendor_contact')";
         mysqli_query($conn, $insert_vendor);
