@@ -84,6 +84,15 @@
 					</ul>
 				</li>
 
+				<li class="has-children comments">
+					<a href="#0">Notice Periods</a>
+					
+					<ul>
+						<li><a href="#0">Add Notice Period</a></li>
+						<li><a href="#0">View All</a></li>
+					</ul>
+				</li>
+
 				<li class="has-children bookmarks">
 					<a href="#0">View All Vendors</a>
 				</li>
@@ -135,6 +144,12 @@
 <script>
     $(function() {
         $("#datepicker").datepicker();
+    });
+    $(function() {
+        $("#e-datepicker").datepicker();
+    });
+    $(function() {
+        $("#notice-datepicker").datepicker();
     });
 </script>
 </body>
