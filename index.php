@@ -70,7 +70,6 @@
 					<ul>
 						<li><a href="#0">Expiration</a></li>
 						<li><a href="#0">Notice Period</a></li>
-						<li><a href="#0">Other</a></li>
 					</ul>
 				</li>
 

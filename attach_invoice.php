@@ -42,8 +42,10 @@ error_reporting(E_ALL);
                         <label for="datepicker">Invoice Date</label>
                         <input type="text" name="invoice_date" id="datepicker">
                     </li>
+                    <li>
+                        <input type="submit" name="Invoice-Form" >
+                    </li>
                 </ul>
-                <input type="submit" name="Invoice-Form" >
 
         </fieldset>
        
