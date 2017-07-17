@@ -261,7 +261,7 @@
                 
 
 
-            echo"<script>alert('New contract details inserted successfully!')</script>"; 
+           
             echo"<script>window.open('index.php?new_contract','_self')</script>";
 	    } 
 
