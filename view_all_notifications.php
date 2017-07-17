@@ -17,10 +17,14 @@
 				}
 				else{
 					while($row = mysqli_fetch_array($result)){
+						$id = $row['contract_no'];
 						$msg = $row['notification_text'];
 						$query = "UPDATE notification SET  status = 1";
   					    $run_query = mysqli_query($conn,$query);	
 						$i++;
+						$delete_notification = "Delete from notification where  contract_no = '$id'";
+    					$run_delete = mysqli_query($conn,$delete_notification);
+
 	   		?>
    			<tr>
       			<td><?php echo $i; ?></td>
@@ -30,6 +34,11 @@
    			<?php 
    				} 
   			}
+
+
+
+
+
   		?>
    		
 		</tbody>
