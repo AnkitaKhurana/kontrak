@@ -231,7 +231,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `role_id`) VALUES
 (1, 'Manish', 'manish@kontrak.com', 'Kontrak@1', 0),
-(2, 'Manish', 'manish@kontrak.tk', 'Kontrak@1', 1);
+(2, 'Ankita', 'ankita@kontrak.com', 'Kontrak@1', 1);
 
 -- --------------------------------------------------------
 
@@ -259,9 +259,26 @@ CREATE TABLE `vendor` (
   `phone_no` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- --------------------------------------------------------
+--
+-- Table structure for Notifications `notification`
+--
+DROP TABLE IF EXISTS `notification`;
+CREATE TABLE `notification` (
+`contract_no` varchar(12) NOT NULL,
+`status` int(1) NOT NULL,
+`notification_text` text NOT NULL,
+ `date` date NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 --
 -- Indexes for dumped tables
 --
+
+-- --------------------------------------------------------
 
 --
 -- Indexes for table `category`
@@ -347,6 +364,11 @@ ALTER TABLE `user_role`
 ALTER TABLE `vendor`
   ADD PRIMARY KEY (`vendor_id`),
   ADD UNIQUE KEY `vendor` (`vendor_id`);
+
+
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`contract_no`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables
