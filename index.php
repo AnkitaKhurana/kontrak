@@ -69,16 +69,20 @@
 					<a href="#0">Notifications<span class="count">
 				<?php
 				$get_notifications = "select * from notification";
-								$result = mysqli_query($conn,$get_notifications);
-								$i = 0;
-								if(mysqli_num_rows($result_issues) == 0){
-									echo "0";
-								}
-								else{
-									while($row_issues = mysqli_fetch_array($result))
-										$i++;
-									echo $i;
-								}
+
+				$result = mysqli_query($conn,$get_notifications);
+				$i = 0;
+				if(mysqli_num_rows($result) == 0){
+					echo "0";
+				}
+				else{
+					while($row= mysqli_fetch_array($result))
+						{
+							$status = $row['status'];
+							if($status==0)
+							$i++;}
+					echo $i;
+				}
 
 
 

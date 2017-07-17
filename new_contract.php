@@ -255,8 +255,17 @@
 	    $result_contract = mysqli_query($conn,$insert_contract);
 	  
 	    if($result_contract){
+
+              $add_notification = "Insert into notification(contract_no,status, notification_text ,date) values('$reference_num',0,'Contract $reference_num Added ','$expiration_date')";
+                mysqli_query($conn, $add_notification);
+                
+
+
             echo"<script>alert('New contract details inserted successfully!')</script>"; 
             echo"<script>window.open('index.php?new_contract','_self')</script>";
 	    } 
+
+
+
     }
 ?>
