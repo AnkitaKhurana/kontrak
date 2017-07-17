@@ -66,7 +66,7 @@
 					</ul>
 				</li>
 				<li class="has-children notifications active">
-					<a href="#0">Notifications<span class="count">
+					<a href="index.php?view_all_notifications">Notifications<span class="count">
 				<?php
 				$get_notifications = "select * from notification";
 
@@ -173,6 +173,7 @@
                 if(isset($_GET['view_all_reviews'])){
                     include("view_all_reviews.php"); 
                 }
+
                 if(isset($_GET['view_all_issues'])){
                     include("view_all_issues.php"); 
                 }
@@ -182,6 +183,10 @@
 				if(isset($_GET['logout'])){
                     include("logout.php"); 
                 }
+                if(isset($_GET['view_all_notifications'])){
+                    include("view_all_notifications.php"); 
+                }
+
 			?>
 		</div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
