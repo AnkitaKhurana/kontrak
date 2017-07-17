@@ -24,8 +24,8 @@ while($row = mysqli_fetch_array($result)){
 
 			  $add_notification = "Insert into notification(contract_no,status, notification_text) values('$reference_num',0,'Contract $reference_num will Expire in ".($m-date("m"))."months')";
                 mysqli_query($conn, $add_notification);
-           //      $query = "UPDATE expiration SET notified = 1";
-  					    // $run_query = mysqli_query($conn,$query);	
+                $query = "UPDATE expiration SET notified = 1";
+  				$run_query = mysqli_query($conn,$query);	
 		
 		 }
 	}
