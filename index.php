@@ -1,11 +1,15 @@
 <?php
 	include('config.php');
+   include('update_notifications.php');
 	session_start();
 	if(isset($_SESSION['logged'])!="true")
 	{
  		header("Location: login.php");
  		die();
 	}
+
+
+
 ?>
 <!Doctype html>
 <html lang="en" class="no-js">

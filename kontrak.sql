@@ -99,7 +99,8 @@ CREATE TABLE `expiration` (
   `status_days` int(4) NOT NULL,
   `renewal_provision_id` int(2) NOT NULL,
   `termination_rights` text NOT NULL,
-  `assignment_provision` text NOT NULL
+  `assignment_provision` text NOT NULL,
+  `notified` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -268,8 +269,7 @@ DROP TABLE IF EXISTS `notification`;
 CREATE TABLE `notification` (
 `contract_no` varchar(12) NOT NULL,
 `status` int(1) NOT NULL,
-`notification_text` text NOT NULL,
- `date` date NOT NULL
+`notification_text` text NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 

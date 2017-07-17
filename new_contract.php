@@ -4,6 +4,9 @@
         header("Location: login.php");
         die();
     }
+    
+
+    include('update_notifications.php');
 ?>
 <h1 style="text-align: left; padding-left: 5%;">Add New Contract</h1>
 <div class="form-container">
@@ -247,7 +250,7 @@
         mysqli_query($conn, $insert_sdm);
         $sdm_id = mysqli_insert_id($conn);
 
-        $insert_expiration = "Insert into expiration(contract_no, date, renewal_provision_id, termination_rights, assignment_provision) values('$reference_num','$expiration_date', '$renewal_provision', '$termination_provision', '$assignment_provision')";
+        $insert_expiration = "Insert into expiration(contract_no, date, renewal_provision_id, termination_rights, assignment_provision,notified) values('$reference_num','$expiration_date', '$renewal_provision', '$termination_provision', '$assignment_provision',0)";
         mysqli_query($conn, $insert_expiration);
         $expiration_id = mysqli_insert_id($conn);
 
@@ -256,7 +259,7 @@
 	  
 	    if($result_contract){
 
-              $add_notification = "Insert into notification(contract_no,status, notification_text ,date) values('$reference_num',0,'Contract $reference_num Added ','$expiration_date')";
+              $add_notification = "Insert into notification(contract_no,status, notification_text) values('$reference_num',0,'Contract $reference_num Added ')";
                 mysqli_query($conn, $add_notification);
                 
 
